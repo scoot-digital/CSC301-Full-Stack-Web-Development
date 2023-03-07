@@ -1,0 +1,5 @@
+Make each calculator
+Save HTML for each in variable? -> Trying to avoid PHP
+Have a div to hold calculator - give ID #calculatorContainer
+Add function to wipe all data in calculatorContainer and add code for the calculator the client wants
+Add function to each link
