@@ -334,13 +334,20 @@
 
                             </div>
 
-                            <!-- Calculator Elements -->
-                        
+                            <!-- Calculator Elements -->                        
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text fst-italic">r</span>
-                                </div>
+                                
+                                <span class="input-group-text fst-italic">r</span>
+                                
                                 <input type="text" class="form-control" id="circleInput" placeholder="Radius of the circle" aria-label="Radius of the circle" aria-describedby="basic-addon1">
+
+                                <button class="btn btn-outline-secondary dropdown-toggle" id="circleCalculatorUnitButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">cm</button>
+                                <ul class="dropdown-menu dropdown-menu-end">                                    
+                                  <li><a class="dropdown-item" href="#">cm</a></li>
+                                  <li><a class="dropdown-item" href="#">mm</a></li>
+                                  <li><a class="dropdown-item" href="#">inch</a></li>
+                                </ul>
+
                             </div>
 
                             <button class = "btn btn-primary float-end" onclick="calculateArea('circle')">Calculate</button>
@@ -378,24 +385,48 @@
                             <!-- Calculator Elements -->
                         
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text fst-italic">a</span>
-                                </div>
+                               
+                                <span class="input-group-text fst-italic">a</span>
+                               
                                 <input type="text" class="form-control" id="trapezoidInputA" placeholder="Base a of the trapezoid" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
+                           
+                                <button class="btn btn-outline-secondary dropdown-toggle" id="trapACalculatorUnitButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">cm</button>
+                                <ul class="dropdown-menu dropdown-menu-end">                                    
+                                  <li><a class="dropdown-item" href="#">cm</a></li>
+                                  <li><a class="dropdown-item" href="#">mm</a></li>
+                                  <li><a class="dropdown-item" href="#">inch</a></li>
+                                </ul>
+                           
                             </div>
 
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text fst-italic">b</span>
-                                </div>
+                                
+                                <span class="input-group-text fst-italic">b</span>
+                                
                                 <input type="text" class="form-control" id="trapezoidInputB" placeholder="Base b of the trapezoid" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
+                           
+                                <button class="btn btn-outline-secondary dropdown-toggle" id="trapBsquareCalculatorUnitButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">cm</button>
+                                <ul class="dropdown-menu dropdown-menu-end">                                    
+                                  <li><a class="dropdown-item" href="#">cm</a></li>
+                                  <li><a class="dropdown-item" href="#">mm</a></li>
+                                  <li><a class="dropdown-item" href="#">inch</a></li>
+                                </ul>
+                           
                             </div>
 
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text fst-italic">h</span>
-                                </div>
+                                
+                                <span class="input-group-text fst-italic">h</span>
+                                
                                 <input type="text" class="form-control" id="trapezoidInputH" placeholder="Height of the trapezoid" aria-label="Height of the trapezoid" aria-describedby="basic-addon1">
+                           
+                                <button class="btn btn-outline-secondary dropdown-toggle" id="trapHCalculatorUnitButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">cm</button>
+                                <ul class="dropdown-menu dropdown-menu-end">                                    
+                                  <li><a class="dropdown-item" href="#">cm</a></li>
+                                  <li><a class="dropdown-item" href="#">mm</a></li>
+                                  <li><a class="dropdown-item" href="#">inch</a></li>
+                                </ul>
+                           
                             </div>
 
                             <button class = "btn btn-primary float-end" onclick="calculateArea('trapezoid')">Calculate</button>
