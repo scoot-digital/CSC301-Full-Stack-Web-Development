@@ -1,11 +1,27 @@
-.unstyledList {
+.custom-bullet{
 
-    list-style-type: none;
+    margin-right: 12pt;
 
 }
 
-.listBullet{
+.navbar-nav li {
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+}
 
-    margin-right: 12pt;
+
+#user-dropdown{
+
+    padding-right:.9rem;
+
+}
+
+#user-dropdown::after{
+
+    margin: 0 0 0 .4em;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 
 }

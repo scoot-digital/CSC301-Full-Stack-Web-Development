@@ -84,3 +84,26 @@ function showCalculator(_shape){
     delete requiredCalculator;
 
 }
+
+//  -----   Function to show/hide history    -----   //
+function toggleHistory(){
+
+    //  Get the toggle which hides/shows calculator history
+    historySwitch = document.getElementById("history-switch");
+    
+    //  Get the container that shows the history of what the user has calculated
+    historyContainer = document.getElementById("history-container");
+
+    if (historySwitch.is(':checked')){
+    
+        //  Show the calculator history
+        requiredCalculator.style.display = "block";
+
+    } else {
+
+        //  Hide the calculator history
+        requiredCalculator.style.display = "none";
+
+    }
+
+}
