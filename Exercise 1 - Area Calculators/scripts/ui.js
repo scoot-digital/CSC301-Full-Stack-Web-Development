@@ -73,7 +73,7 @@ function initialiseListenersShapeSelection(){
             for (var i = 0; i < links.length; i++) {
 
                 //  Reset all shapes so none are highlighted
-                shapes[i].className.baseVal = "me-1 align-middle bi";
+                shapes[i].className.baseVal = "me-1 align-middle bi text-secondary";
                 
                 //  Reset all links so none are highlighted
                 links[i].className = "link-secondary";
