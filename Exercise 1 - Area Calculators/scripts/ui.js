@@ -7,7 +7,7 @@ var calculators = null;
 var calculatorInputs = null;
 
 //  Hide all calculators when webpage loads
-window.onload = function() {hideCalculators(), showCalculator('square')};
+window.onload = function() {initialiseListenersShapeSelection(), hideCalculators(), showCalculator('square')};
 
 
 // // // ----------------------------------------  Class methods   ----------------------------------------   //  //  //
@@ -29,6 +29,12 @@ function hideCalculators(){
     }
 
     //  ---  Reset all calculator inputs ---
+    clearCalculators();
+    
+}
+
+//  -----   Function to clear all calculators   -----   //
+function clearCalculators(){
 
     // Get all inputs from all calculators
     calculatorInputs = document.getElementsByClassName("form-control");
@@ -40,12 +46,59 @@ function hideCalculators(){
         calculatorInputs[i].value = "";
         
     }
-    
+
 }
+
+
+//  -----   Function to listen to shape selection links and show required calculator on click   -----   //
+
+function initialiseListenersShapeSelection(){
+
+    // Get the list of shape selection links
+    var shapeSelectionList = document.getElementById("shape-selection-list");    
+
+    // Get all the links in the list
+    var links = shapeSelectionList.getElementsByTagName("a");  
+
+    //  Get all the shape icon SVGs in the list
+    var shapes = shapeSelectionList.getElementsByTagName("svg");  
+
+    // For each shape and link in the list of shape selection links
+    for (var i = 0; i < links.length; i++) {   
+    
+        //  Listen for clicks on the link
+        links[i].addEventListener("click", function() {     
+            
+            // For each link in the list of shape selection links
+            for (var i = 0; i < links.length; i++) {
+
+                //  Reset all shapes so none are highlighted
+                shapes[i].className.baseVal = "me-1 align-middle bi";
+                
+                //  Reset all links so none are highlighted
+                links[i].className = "link-secondary";
+
+            }                  
+            
+            //  Highlight the clicked link
+            this.className = "link-primary";
+
+            //  Get the shape associated with this link
+            associatedShape = this.previousElementSibling;
+            
+            //  Highlight the shape associated with this link
+            associatedShape.className.baseVal = "me-1 align-middle bi text-primary";
+    
+        });
+    
+    }
+
+}
+
 
 //  -----   Function to show specific calculator based on string passed in    -----   //
 
-function showCalculator(_shape){
+function showCalculator(_shape, _shapeLink){
 
     //  Hide all calculators so that currently shown calculator is hidden
     hideCalculators();
@@ -78,7 +131,7 @@ function showCalculator(_shape){
     }
 
     //  Show the required calculator
-    requiredCalculator.style.display = "block";
+    requiredCalculator.style.display = "block";   
 
     //  Destroy the variable which stores the calculator required
     delete requiredCalculator;

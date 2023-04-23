@@ -1,5 +1,15 @@
 // // // -----  Class methods  -----   //  //  //
 
+
+//  //  -----   Calculation history methods -----   //  //
+
+//  -----   Functions to set unit of measurement in calculations    -----   //
+
+
+
+
+//  //  -----   Calculator methods  -----   //  //
+
 //  -----   Function to round a float and format to a given number of decimals  -----   //
 function formatFloat(value, decimals){
 
