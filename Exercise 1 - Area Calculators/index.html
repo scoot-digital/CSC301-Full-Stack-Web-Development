@@ -193,10 +193,12 @@
                     <li class = "list-inline-item me-3">                        
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="me-1 align-middle bi text-primary" viewBox="0 0 16 16">
+
                             <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"/>
+
                         </svg>                        
 
-                        <a  href="#" onclick="javascript:showCalculator('square')" class="link-primary">            
+                        <a  href="#" class="link-primary">            
                             
                             Square
 
@@ -207,10 +209,12 @@
                     <li class = "list-inline-item me-3">                       
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="me-1 align-middle bi text-secondary" viewBox="0 0 16 16">
+
                             <circle cx="8" cy="8" r="8"/>
+
                         </svg>                       
 
-                        <a href="#" onclick="javascript:showCalculator('circle')" class="link-secondary">            
+                        <a href="#" class="link-secondary">            
                             
                             Circle
 
@@ -221,10 +225,12 @@
                     <li class = "list-inline-item me-3">                    
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="me-1 align-middle bi text-secondary" viewBox="0 0 16 16">
+
                             <polygon points="3,0 13,0 16,16, 0,16"/>
+
                         </svg>                       
 
-                        <a href="#" onclick="javascript:showCalculator('trapezoid')" class="link-secondary">            
+                        <a href="#" class="link-secondary">        
                             
                             Trapezoid
 
@@ -246,7 +252,7 @@
 
                 <p class="fs-5 col-md-8 mb-5">Quickly and easily calculate the area of shapes, given the required attributes.</p>  
 
-                <hr class="col-3 col-md-2 mb-5"/>
+                <hr class="col-3 col-md-2 mb-5">
 
                 <div class="row g-5">
 
@@ -300,10 +306,9 @@
 
                             <button class = "btn btn-primary float-end" onclick="calculateArea('square')">Calculate</button>
 
-                            <button class="btn btn-secondary float-end me-1" onclick="clearCalculators()">Clear</button>
+                            <button class="btn btn-secondary float-end me-1" onclick="clearCalculator()">Clear</button>
 
                         </div>
-
 
 
                         <!-- Container for Circle calculator -->
@@ -352,10 +357,9 @@
 
                             <button class = "btn btn-primary float-end" onclick="calculateArea('circle')">Calculate</button>
 
-                            <button class="btn btn-secondary float-end me-1" onclick="clearCalculators()">Clear</button>
+                            <button class="btn btn-secondary float-end me-1" onclick="clearCalculator()">Clear</button>
 
                         </div>
-
 
 
                         <!-- Container for Trapezoid calculator -->
@@ -431,9 +435,24 @@
 
                             <button class = "btn btn-primary float-end" onclick="calculateArea('trapezoid')">Calculate</button>
 
-                            <button class="btn btn-secondary float-end me-1" onclick="clearCalculators()">Clear</button>
+                            <button class="btn btn-secondary float-end me-1" onclick="clearCalculator()">Clear</button>
 
                         </div>
+
+                        <div class="clearfix"></div> 
+                        
+                        <div class="input-group mt-3" id="area-output-group">   
+                        
+                            <input type="text" class="form-control" id="area-output-text" placeholder="Area of the shape" aria-label="Area of the shape" aria-describedby="basic-addon1">
+                            
+                            <button class="btn btn-outline-secondary dropdown-toggle" id="shapeAreaUnitButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">cm</button>
+                            <ul class="dropdown-menu dropdown-menu-end">                                    
+                            <li><a class="dropdown-item" href="#">cm</a></li>
+                            <li><a class="dropdown-item" href="#">mm</a></li>
+                            <li><a class="dropdown-item" href="#">inch</a></li>
+                            </ul>
+
+                        </div> 
 
                     </div>
 
@@ -494,7 +513,7 @@
 
             <footer class="pt-5 my-5 text-muted border-top">
 
-                Created by scoot. <br/>
+                Created by scoot. <br>
 
                 CSS by the Bootstrap team &middot; &copy; 2022
 

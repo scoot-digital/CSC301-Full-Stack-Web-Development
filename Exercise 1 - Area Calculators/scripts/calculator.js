@@ -1,4 +1,11 @@
-// // // -----  Class methods  -----   //  //  //
+//  //  //  -------------------------   Global variables and onLoad function    -------------------------   //  //  //
+
+//  Declare variables to represent the area to display output
+var areaOutputGroup = null;
+var areaOutputText = null;
+
+
+// // // ----------------------------------------  Class methods   ----------------------------------------   //  //  //
 
 
 //  //  -----   Calculation history methods -----   //  //
@@ -68,10 +75,10 @@ function calculateArea(_shape){
 
     }
 
-    //  Show the calculated area
-    alert(formatFloat(areaCalculated, 2));
+    //  Assign the output textbox text as the calculated area
+    areaOutputText.value = formatFloat(areaCalculated, 2);
 
-    //  Destroy the variable which stores the calculated area
-    delete areaCalculated;
+    //  Show the calculated area
+    areaOutputGroup.style.display = "flex";
 
 }
