@@ -11,9 +11,6 @@ areaOutputGroup = null;
 areaOutputText = null;
 areaOutputUnitsSelect = null;
 
-//  Declare variable to hold shape of current calculator
-currentCalculator = null
-
 //  Hide all calculators when webpage loads
 window.onload = function() {applyGlobalVariables(), initialiseListenersShapeSelection(), initialiseCalculators(), showCalculator('square'), initialiseListenerOutputConversion()};
 
@@ -234,9 +231,6 @@ function showCalculator(_shape){
             break;
             
     }
-
-    //  Set the global variable holding which calculator to show
-    currentCalculator = _shape;
 
     //  Show the required calculator
     showElements(requiredCalculator, "block");   

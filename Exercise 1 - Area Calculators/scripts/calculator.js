@@ -225,24 +225,36 @@ function calculateArea(_shape){
             //  Convert value entered to mm
             aNormalised = convertUnit(a, inputUnits, "mm");         
 
-            //  Calculate area of square in mm
+            //  Calculate area of shape in mm
             areaCalculatedNormalised = aNormalised * aNormalised;   
 
             //  Set units for output
             outputUnits = inputUnits + "2";
 
-            //  Convert area of square to desired unit of measurement
+            //  Convert area of shape to desired unit of measurement
             areaCalculated = convertUnit(areaCalculatedNormalised, "mm2", outputUnits);    
             
             break;
 
-        case 'circle':
+        case 'circle':        
 
             //  Get value of radius of circle from form
             r = parseFloat(document.getElementById("circleInput").value);
 
-            //  Calculate area of circle
-            areaCalculated = Math.PI * (r * r);
+            //  Get value from unit of measurement select element            
+            inputUnits = document.getElementById("circle-input-units").value;              
+
+            //  Convert value entered to mm
+            rNormalised = convertUnit(r, inputUnits, "mm");         
+
+            //  Calculate area of shape in mm
+            areaCalculatedNormalised = Math.PI * (rNormalised * rNormalised);   
+
+            //  Set units for output
+            outputUnits = inputUnits + "2";
+
+            //  Convert area of shape to desired unit of measurement
+            areaCalculated = convertUnit(areaCalculatedNormalised, "mm2", outputUnits);             
             
             break;
 
