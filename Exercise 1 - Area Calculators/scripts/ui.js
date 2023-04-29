@@ -8,9 +8,14 @@ calculatorInputs = null;
 
 //  Declare variables to represent the area to display output
 areaOutputGroup = null;
+areaOutputText = null;
+areaOutputUnits = null;
+
+//  Declare variable to hold shape of current calculator
+currentCalculator = null
 
 //  Hide all calculators when webpage loads
-window.onload = function() {applyGlobalVariables(), initialiseListenersShapeSelection(), initialiseCalculators(), showCalculator('square')};
+window.onload = function() {applyGlobalVariables(), initialiseListenersShapeSelection(), initialiseCalculators(), showCalculator('square'), initialiseListenerOutputConversion()};
 
 
 // // // ----------------------------------------  Class methods   ----------------------------------------   //  //  //
@@ -29,6 +34,7 @@ function applyGlobalVariables(){
 
     areaOutputGroup = document.getElementById("area-output-group");
     areaOutputText = document.getElementById("area-output-text");
+    areaOutputUnits = document.getElementById("area-output-units");
 
 }
 
@@ -53,7 +59,10 @@ function clearElements(_elements){
             //  Clear the element
             _elements.value = "";
         
-    }      
+    }     
+    
+    //  Clear the previous unit saved for measuring the output
+    previousOutputUnits = null;
 
 }
 
@@ -165,10 +174,10 @@ function initialiseListenersShapeSelection(){
             //  -----   Show the required calculator    -----   //
 
             //  Get calculator to show from text value of link
-            shape = this.innerHTML.trim().replace(/&nbsp;/g, '').toLowerCase();            
+            currentCalculator = this.innerHTML.trim().replace(/&nbsp;/g, '').toLowerCase();            
             
             //  Show calculator required by user
-            showCalculator(shape);
+            showCalculator(currentCalculator);
     
         });
     
