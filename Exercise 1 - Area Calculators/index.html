@@ -261,7 +261,7 @@
                         <h2>Area Calculator</h2>
                         
                         <!-- Container for Square calculator -->
-                        <div class="calculatorContainer" id="squareCalculatorContainer">
+                        <div class="calculatorContainer" id="square-calculator-container">
 
                             <p>Calculate the area of a 
                                 
@@ -289,13 +289,13 @@
                             </div>
 
                             <!-- Calculator Elements -->    
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-3" id="square-input">
                                
                                 <span class="input-group-text fst-italic">a</span>
                                
-                                <input type="text" class="form-control" id="squareInput" placeholder="Height or width of the square" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" id = "square-a" placeholder="Height or width of the square" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
                                 
-                                <select class="form-select" id="square-input-units">
+                                <select class="form-select" id="square-a-units">
                                     <option selected value = "cm">cm</option>
                                     <option value="mm">mm</option>
                                     <option value="inch">inch</option>
@@ -311,7 +311,7 @@
 
 
                         <!-- Container for Circle calculator -->
-                        <div class="calculatorContainer" id="circleCalculatorContainer">
+                        <div class="calculatorContainer" id="circle-calculator-container">
 
                             <p>Calculate the area of a 
                                 
@@ -339,13 +339,13 @@
                             </div>
 
                             <!-- Calculator Elements -->                        
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-3" id="circle-input">
                                 
                                 <span class="input-group-text fst-italic">r</span>
                                 
-                                <input type="text" class="form-control" id="circleInput" placeholder="Radius of the circle" aria-label="Radius of the circle" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control" id="circle-r" placeholder="Radius of the circle" aria-label="Radius of the circle" aria-describedby="basic-addon1">
 
-                                <select class="form-select" id="circle-input-units">
+                                <select class="form-select" id="circle-r-units">
                                     <option selected value = "cm">cm</option>
                                     <option value="mm">mm</option>
                                     <option value="inch">inch</option>
@@ -361,7 +361,7 @@
 
 
                         <!-- Container for Trapezoid calculator -->
-                        <div class="calculatorContainer" id="trapezoidCalculatorContainer">
+                        <div class="calculatorContainer" id="trapezoid-calculator-container">
 
                             <p>Calculate the area of a 
                                 
@@ -386,46 +386,50 @@
 
                             <!-- Calculator Elements -->
                         
-                            <div class="input-group mb-3">
-                               
-                                <span class="input-group-text fst-italic">a</span>
-                               
-                                <input type="text" class="form-control" id="trapezoidInputA" placeholder="Base a of the trapezoid" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
-                           
-                                <select class="form-select" id="trapezoid-input-a-units">
-                                    <option selected value = "cm">cm</option>
-                                    <option value="mm">mm</option>
-                                    <option value="inch">inch</option>
-                                </select>
-                           
-                            </div>
+                            <div id="trapezoid-input">
 
-                            <div class="input-group mb-3">
+                                <div class="input-group mb-3">
                                 
-                                <span class="input-group-text fst-italic">b</span>
+                                    <span class="input-group-text fst-italic">a</span>
                                 
-                                <input type="text" class="form-control" id="trapezoidInputB" placeholder="Base b of the trapezoid" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
-                           
-                                <select class="form-select" id="trapezoid-input-b-units">
-                                    <option selected value = "cm">cm</option>
-                                    <option value="mm">mm</option>
-                                    <option value="inch">inch</option>
-                                </select>
-                           
-                            </div>
+                                    <input type="text" class="form-control" id="trapezoid-input-a" placeholder="Base a of the trapezoid" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
+                            
+                                    <select class="form-select" id="trapezoid-input-a-units">
+                                        <option selected value = "cm">cm</option>
+                                        <option value="mm">mm</option>
+                                        <option value="inch">inch</option>
+                                    </select>
+                            
+                                </div>
 
-                            <div class="input-group mb-3">
-                                
-                                <span class="input-group-text fst-italic">h</span>
-                                
-                                <input type="text" class="form-control" id="trapezoidInputH" placeholder="Height of the trapezoid" aria-label="Height of the trapezoid" aria-describedby="basic-addon1">
-                           
-                                <select class="form-select" id="trapezoid-input-c-units">
-                                    <option selected value = "cm">cm</option>
-                                    <option value="mm">mm</option>
-                                    <option value="inch">inch</option>
-                                </select>
-                           
+                                <div class="input-group mb-3">
+                                    
+                                    <span class="input-group-text fst-italic">b</span>
+                                    
+                                    <input type="text" class="form-control" id="trapezoid-input-b" placeholder="Base b of the trapezoid" aria-label="Height/Width of the square" aria-describedby="basic-addon1">
+                            
+                                    <select class="form-select" id="trapezoid-input-b-units">
+                                        <option selected value = "cm">cm</option>
+                                        <option value="mm">mm</option>
+                                        <option value="inch">inch</option>
+                                    </select>
+                            
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    
+                                    <span class="input-group-text fst-italic">h</span>
+                                    
+                                    <input type="text" class="form-control" id="trapezoid-input-h" placeholder="Height of the trapezoid" aria-label="Height of the trapezoid" aria-describedby="basic-addon1">
+                            
+                                    <select class="form-select" id="trapezoid-input-h-units">
+                                        <option selected value = "cm">cm</option>
+                                        <option value="mm">mm</option>
+                                        <option value="inch">inch</option>
+                                    </select>
+                            
+                                </div>
+
                             </div>
 
                             <button class = "btn btn-primary float-end" onclick="calculateArea('trapezoid')">Calculate</button>

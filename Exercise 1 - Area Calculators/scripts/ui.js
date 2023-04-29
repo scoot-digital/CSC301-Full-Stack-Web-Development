@@ -88,6 +88,7 @@ function hideElements(_elements){
 
 }
 
+
 //  -----   Function to show elements  -----   //
 function showElements(_elements, _display){   
 
@@ -127,8 +128,8 @@ function initialiseCalculators(){
 
 }
 
-//  -----   Function to listen to shape selection links and show required calculator on click   -----   //
 
+//  -----   Function to listen to shape selection links and show required calculator on click   -----   //
 function initialiseListenersShapeSelection(){
 
     // Get the list of shape selection links
@@ -192,11 +193,21 @@ function clearCalculator(){
     //  Hide the calculator output area
     hideElements(areaOutputGroup);
 
+    //  Get all select statements representing units of measurement for inputs   
+    inputUnits = document.querySelectorAll(".form-select");
+
+    //  For all elements in the list of select statements representing units of measurement for inputs 
+    for (i = 0; i < inputUnits.length; i++) {
+
+        //  Set all units of measurement to the default
+        inputUnits[i].value = "cm";
+
+    }
+
 }
 
 
 //  -----   Function to show specific calculator based on string passed in    -----   //
-
 function showCalculator(_shape){
 
     //  Hide all calculators
@@ -206,36 +217,13 @@ function showCalculator(_shape){
     clearCalculator();
 
     //  Show the calculator required based on the string passed in    
-    switch (_shape) {
-
-        case 'square':  
-
-            requiredCalculator = document.getElementById("squareCalculatorContainer");
-            
-            break;
-
-        case 'circle':
-
-            requiredCalculator = document.getElementById("circleCalculatorContainer");
-            
-            break;
-
-        case 'trapezoid':
-
-            requiredCalculator = document.getElementById("trapezoidCalculatorContainer");
-            
-            break;
-    
-        default:
-
-            break;
-            
-    }
+    requiredCalculator = document.querySelector(`#${_shape}-calculator-container`);
 
     //  Show the required calculator
     showElements(requiredCalculator, "block");   
 
 }
+
 
 //  -----   Function to show/hide history    -----   //
 function toggleHistory(){
