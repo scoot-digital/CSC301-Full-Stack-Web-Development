@@ -9,7 +9,7 @@ calculatorInputs = null;
 //  Declare variables to represent the area to display output
 areaOutputGroup = null;
 areaOutputText = null;
-areaOutputUnits = null;
+areaOutputUnitsSelect = null;
 
 //  Declare variable to hold shape of current calculator
 currentCalculator = null
@@ -34,7 +34,7 @@ function applyGlobalVariables(){
 
     areaOutputGroup = document.getElementById("area-output-group");
     areaOutputText = document.getElementById("area-output-text");
-    areaOutputUnits = document.getElementById("area-output-units");
+    areaOutputUnitsSelect = document.getElementById("area-output-units");
 
 }
 
@@ -174,10 +174,10 @@ function initialiseListenersShapeSelection(){
             //  -----   Show the required calculator    -----   //
 
             //  Get calculator to show from text value of link
-            currentCalculator = this.innerHTML.trim().replace(/&nbsp;/g, '').toLowerCase();            
+            shape = this.innerHTML.trim().replace(/&nbsp;/g, '').toLowerCase();            
             
             //  Show calculator required by user
-            showCalculator(currentCalculator);
+            showCalculator(shape);
     
         });
     
@@ -234,6 +234,9 @@ function showCalculator(_shape){
             break;
             
     }
+
+    //  Set the global variable holding which calculator to show
+    currentCalculator = _shape;
 
     //  Show the required calculator
     showElements(requiredCalculator, "block");   

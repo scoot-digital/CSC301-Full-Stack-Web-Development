@@ -129,8 +129,6 @@ function convertUnit(_valueA, _unitA, _unitB){
 
                     _valueA = _valueA * 0.01
 
-                    console.log("changed from mm2 to cm2");
-
                     break;
 
                 case 'cm2': 
@@ -184,13 +182,16 @@ function convertUnit(_valueA, _unitA, _unitB){
 }
 
 //  -----   Function to show output of area calculations    -----   //
-function showOutput(_output){
+function showOutput(_output, _outputUnits){
 
     //  Assign the output textbox text as the calculated area
     areaOutputText.value = formatFloat(_output, 2);
 
+    //  Set global variable holding output units so that output conversions can be done when select element changed
+    previousOutputUnits = _outputUnits;    
+
     //  Make the output of the units of measurement match the input
-    areaOutputUnits.value = previousOutputUnits;
+    areaOutputUnitsSelect.value = previousOutputUnits;    
 
     //  Show the calculated area
     showElements(areaOutputGroup, "flex");
@@ -218,20 +219,20 @@ function calculateArea(_shape){
             //  Get value of side of square from form
             a = parseFloat(document.getElementById("squareInput").value);
 
-            //  Get value from unit of measurement select element
-            //  and set to global variable so that output conversions can be done when select element changed
-            previousOutputUnits = document.getElementById("square-input-units").value;              
+            //  Get value from unit of measurement select element            
+            inputUnits = document.getElementById("square-input-units").value;              
 
             //  Convert value entered to mm
-            aNormalised = convertUnit(a, previousOutputUnits, "mm");         
+            aNormalised = convertUnit(a, inputUnits, "mm");         
 
             //  Calculate area of square in mm
-            areaCalculatedNormalised = aNormalised * aNormalised;  
-            
-            console.log("area in mm is " + areaCalculatedNormalised);            
+            areaCalculatedNormalised = aNormalised * aNormalised;   
+
+            //  Set units for output
+            outputUnits = inputUnits + "2";
 
             //  Convert area of square to desired unit of measurement
-            areaCalculated = convertUnit(areaCalculatedNormalised, "mm2", previousOutputUnits + "2");    
+            areaCalculated = convertUnit(areaCalculatedNormalised, "mm2", outputUnits);    
             
             break;
 
@@ -270,7 +271,7 @@ function calculateArea(_shape){
     }   
 
     //  Show the output of the calculation
-    showOutput(areaCalculated);
+    showOutput(areaCalculated, outputUnits);    
 
 }
 
@@ -279,13 +280,15 @@ function calculateArea(_shape){
 function initialiseListenerOutputConversion(){
 
     //  Listen for changes to value in select element
-    areaOutputUnits.addEventListener("click", function() {  
+    areaOutputUnitsSelect.addEventListener("click", function() {  
 
-        convertedArea = convertUnit(parseFloat(areaOutputText.value), previousOutputUnits, areaOutputUnits.value);
+        console.log("trying to convert");
 
-        previousOutputUnits = areaOutputUnits.value;
+        convertedArea = convertUnit(parseFloat(areaOutputText.value), previousOutputUnits, areaOutputUnitsSelect.value);
 
-        showOutput(convertedArea);        
+        previousOutputUnits = areaOutputUnitsSelect.value;
+
+        showOutput(convertedArea, previousOutputUnits);        
 
     });
 
